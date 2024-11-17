@@ -8,6 +8,10 @@ def main():
     max_min = find_min_max(num_list)
     print("Maximum Temperature is "+ str(max_min[0]))
     print("Minimum Temperature is "+ str(max_min[1]))
+    sorted = sort_temperature(num_list)
+    print("Sorted Temperature is "+ str(sorted))
+    median = calc_median_temperature(sorted)
+    print("Median Temperature is "+ str(median))
 
 def display_main_menu():
     print("display_main_menu")
@@ -35,21 +39,23 @@ def find_min_max(temp):
 
     return [max_temp,min_temp]
 
-def sort_temperature():
+def sort_temperature(temp):
     print("sort_temperature")
+    sorted_temp = sorted(temp)  # Sort the list in ascending order
+    return sorted_temp
 
 def calc_median_temperature(temp):
     print("calc_median_temperature")
-    sorted_temp = sorted(temp)
-    n = len(sorted_temp)
+    #sorted_temp = sorted(temp)
+    n = len(temp)
     mid = n // 2
 
     # If odd number of elements, return the middle one
     if n % 2 != 0:
-        median = sorted_temp[mid]
+        median = temp[mid]
     # If even number of elements, return the average of the two middle ones
     else:
-        median = (sorted_temp[mid - 1] + sorted_temp[mid]) / 2
+        median = (temp[mid - 1] + temp[mid]) / 2
     return median
 
 
