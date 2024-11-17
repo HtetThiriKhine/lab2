@@ -42,11 +42,11 @@ def find_min_max(temp):
 def sort_temperature(temp):
     print("sort_temperature")
     sorted_temp = sorted(temp)  # Sort the list in ascending order
+    #sorted_temp = sorted(temp, reverse=True) #in descending order
     return sorted_temp
 
 def calc_median_temperature(temp):
     print("calc_median_temperature")
-    #sorted_temp = sorted(temp)
     n = len(temp)
     mid = n // 2
 
